@@ -5,17 +5,16 @@ import com.transfer.dto.TransactionResponseDTO;
 import com.transfer.mappers.TransactionMapper;
 import com.transfer.model.TransactionDay;
 import com.transfer.respository.TransactionDayRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
-@SuppressWarnings("unused")
+@RequiredArgsConstructor
 public class TransactionDayService {
 
-    @Autowired
-    private TransactionDayRepository transactionDayRepository;
-    @Autowired
-    private TransactionMapper transactionMapper;
+    private final TransactionDayRepository transactionDayRepository;
+
+    private final TransactionMapper transactionMapper;
 
     public TransactionResponseDTO insert(TransactionDTO transactionDTO) {
         TransactionDay newTransaction = TransactionDay.builder()

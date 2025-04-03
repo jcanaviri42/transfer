@@ -6,21 +6,20 @@ import com.transfer.model.TransactionHistory;
 import com.transfer.respository.TransactionDayRepository;
 import com.transfer.respository.TransactionHistoryRepository;
 import jakarta.transaction.Transactional;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-@SuppressWarnings("unused")
+@RequiredArgsConstructor
 public class TransactionScheduleService {
 
-    @Autowired
-    private TransactionDayRepository transactionDayRepository;
-    @Autowired
-    private TransactionHistoryRepository transactionHistoryRepository;
-    @Autowired
-    private TransactionMapper transactionMapper;
+    private final TransactionDayRepository transactionDayRepository;
+
+    private final TransactionHistoryRepository transactionHistoryRepository;
+
+    private final TransactionMapper transactionMapper;
 
     @Transactional
     public void transferData() {

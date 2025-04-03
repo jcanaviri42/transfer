@@ -3,7 +3,7 @@ package com.transfer.controllers;
 import com.transfer.dto.TransactionDTO;
 import com.transfer.dto.TransactionResponseDTO;
 import com.transfer.services.TransactionDayService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,10 +13,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/transactions-day")
-@SuppressWarnings("unused")
+@RequiredArgsConstructor
 public class TransactionDayController {
-    @Autowired
-    private TransactionDayService transactionDayService;
+    private final TransactionDayService transactionDayService;
 
     @PostMapping
     public ResponseEntity<TransactionResponseDTO> insert(

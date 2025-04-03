@@ -1,0 +1,10 @@
+POST localhost:8080/transactions-day
+Content-Type: application/json
+
+{
+  "name": "Product A",
+  "nroTransaction": 1,
+  "amount": 1000.50,
+  "type": "DEPOSIT",
+  "date": "2023-10-10"
+}

@@ -1,19 +1,18 @@
 package com.transfer.schedules;
 
 import com.transfer.services.TransactionScheduleService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 @Component
-@SuppressWarnings("unused")
+@RequiredArgsConstructor
 public class DataTransferTask {
 
-    @Autowired
-    private TransactionScheduleService transactionService;
+    private final TransactionScheduleService transactionService;
 
-    // Run every 2 minutes
-    @Scheduled(cron = "0 */2 * * * *")
+    // Run every 3 minutes
+    @Scheduled(cron = "0 */3 * * * *")
     public void transferDataDaily() {
         transactionService.transferData();
     }

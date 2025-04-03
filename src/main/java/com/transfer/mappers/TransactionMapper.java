@@ -34,6 +34,7 @@ public class TransactionMapper {
         return TransactionHistory.builder()
                 .name(transactionDay.getName())
                 .nroTransaction(transactionDay.getNroTransaction())
+                .amount(transactionDay.getAmount())
                 .type(transactionDay.getType())
                 .date(transactionDay.getDate())
                 .build();
