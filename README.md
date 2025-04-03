@@ -64,13 +64,11 @@ This Spring Boot application automates the transfer of transaction data from a `
 
 **Endpoints:** 
 
-* GET http://localhost:8080/transactions-history?page=1&size=5
-Accept: application/json
+* GET http://localhost:8080/transactions-history?page=1&size=5 (History Paginated)
 
-* GET http://localhost:8080/transactions-history
-Accept: application/json
+* GET http://localhost:8080/transactions-history (History first page)
 
-* POST http://localhost:8080/transactions-day
+* POST http://localhost:8080/transactions-day (Insert in day database)
 
     Content-Type: application/json
     ```JSON
@@ -85,25 +83,33 @@ Accept: application/json
 
 **Scripts:**
 ```sql
-INSERT INTO transaction_day(name, nro_transaction, type, amount, date)
-VALUES('Product A', 1, 'DEPOSIT', 99.99, '2025-03-04');
-INSERT INTO transaction_day(name, nro_transaction, type, amount, date)
-VALUES('Product B', 2, 'WITHDRAWAL', 15.99, '2025-03-04');
-INSERT INTO transaction_day(name, nro_transaction, type, amount, date)
-VALUES('Product C', 3, 'TRANSFER', 43.99, '2025-03-04');
-INSERT INTO transaction_day(name, nro_transaction, type, amount, date)
-VALUES('Product D', 4, 'PAYMENT', 125.99, '2025-03-04');
-INSERT INTO transaction_day(name, nro_transaction, type, amount, date)
-VALUES('Product E', 5, 'DEPOSIT', 415.99, '2025-03-04');
-INSERT INTO transaction_day(name, nro_transaction, type, amount, date)
-VALUES('Product F', 6, 'WITHDRAWAL', 99.99, '2025-03-04');
-INSERT INTO transaction_day(name, nro_transaction, type, amount, date)
-VALUES('Product G', 7, 'TRANSFER', 14.99, '2025-03-04');
-INSERT INTO transaction_day(name, nro_transaction, type, amount, date)
-VALUES('Product H', 8, 'PAYMENT', 5.99, '2025-03-04');
-INSERT INTO transaction_day(name, nro_transaction, type, amount, date)
-VALUES('Product I', 9, 'DEPOSIT', 35.99, '2025-03-04');
-INSERT INTO transaction_day(name, nro_transaction, type, amount, date)
-VALUES('Product J', 10, 'WITHDRAWAL', 12.99, '2025-03-04');
+    INSERT INTO transaction_day(name, nro_transaction, type, amount, date)
+        VALUES('Product A', 1, 'DEPOSIT', 99.99, '2025-03-04');
 
+    INSERT INTO transaction_day(name, nro_transaction, type, amount, date)
+        VALUES('Product B', 2, 'WITHDRAWAL', 15.99, '2025-03-04');
+
+    INSERT INTO transaction_day(name, nro_transaction, type, amount, date)
+        VALUES('Product C', 3, 'TRANSFER', 43.99, '2025-03-04');
+    
+    INSERT INTO transaction_day(name, nro_transaction, type, amount, date)
+        VALUES('Product D', 4, 'PAYMENT', 125.99, '2025-03-04');
+
+    INSERT INTO transaction_day(name, nro_transaction, type, amount, date)
+        VALUES('Product E', 5, 'DEPOSIT', 415.99, '2025-03-04');
+
+    INSERT INTO transaction_day(name, nro_transaction, type, amount, date)
+        VALUES('Product F', 6, 'WITHDRAWAL', 99.99, '2025-03-04');
+
+    INSERT INTO transaction_day(name, nro_transaction, type, amount, date)
+        VALUES('Product G', 7, 'TRANSFER', 14.99, '2025-03-04');
+
+    INSERT INTO transaction_day(name, nro_transaction, type, amount, date)
+        VALUES('Product H', 8, 'PAYMENT', 5.99, '2025-03-04');
+
+    INSERT INTO transaction_day(name, nro_transaction, type, amount, date)
+        VALUES('Product I', 9, 'DEPOSIT', 35.99, '2025-03-04');
+
+    INSERT INTO transaction_day(name, nro_transaction, type, amount, date)
+        VALUES('Product J', 10, 'WITHDRAWAL', 12.99, '2025-03-04');
 ```
