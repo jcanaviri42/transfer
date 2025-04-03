@@ -1,3 +1,12 @@
+###
+GET http://localhost:8080/transactions-history?page=1&size=5
+Accept: application/json
+
+###
+GET http://localhost:8080/transactions-history
+Accept: application/json
+
+###
 POST localhost:8080/transactions-day
 Content-Type: application/json
 
